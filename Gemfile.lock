@@ -166,6 +166,7 @@ GEM
       binding_of_caller (>= 0.7)
       pry (>= 0.9.11)
     rack (1.6.4)
+    rack-cors (0.4.0)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.1)
@@ -253,6 +254,7 @@ DEPENDENCIES
   letter_opener
   pg
   pry-byebug
+  rack-cors
   rails (= 4.2.1)
   rb-fsevent
   rspec-rails (~> 3.2)

@@ -27,5 +27,12 @@ module JsonApi
       g.test_framework      :rspec, fixture: true
       g.fixture_replacement :fabrication
     end
+
+    config.middleware.insert_before 0, "Rack::Cors" do
+      allow do
+        origins '*'
+        resource '*', :headers => :any, :methods => [:get, :post, :options]
+      end
+    end
   end
 end

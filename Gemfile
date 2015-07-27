@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.1'
 gem 'pg'
+gem 'rack-cors', :require => 'rack/cors'
 
 group :development, :test do
     gem 'spring'

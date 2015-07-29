@@ -1,5 +1,5 @@
 module Api::Jr
-    class AuthorResource < JSONAPI::Resource
+    class AuthorResource < BaseResource
 
         has_many :posts
 

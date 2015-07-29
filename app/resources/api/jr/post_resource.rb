@@ -1,5 +1,5 @@
 module Api::Jr
-    class PostResource < JSONAPI::Resource
+    class PostResource < BaseResource
 
         has_one :author
         has_many :comments

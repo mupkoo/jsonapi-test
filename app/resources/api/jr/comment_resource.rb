@@ -1,5 +1,5 @@
 module Api::Jr
-    class CommentResource < JSONAPI::Resource
+    class CommentResource < BaseResource
 
         has_one :post
 

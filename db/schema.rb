@@ -15,14 +15,15 @@ ActiveRecord::Schema.define(version: 20150727122908) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "uuid-ossp"
 
-  create_table "authors", force: :cascade do |t|
+  create_table "authors", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "comments", force: :cascade do |t|
+  create_table "comments", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.integer  "post_id"
     t.text     "body"
     t.datetime "created_at", null: false
@@ -31,7 +32,7 @@ ActiveRecord::Schema.define(version: 20150727122908) do
 
   add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
 
-  create_table "posts", force: :cascade do |t|
+  create_table "posts", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.integer  "author_id"
     t.string   "title"
     t.text     "body"

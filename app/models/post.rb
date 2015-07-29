@@ -4,4 +4,8 @@ class Post < ActiveRecord::Base
     belongs_to :author
     has_many :comments
 
+    # Validations
+    validates :title, presence: true
+    validates :body, presence: true
+
 end

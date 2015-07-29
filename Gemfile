@@ -32,4 +32,4 @@ group :test do
     gem 'faker',       '~> 1.4'
 end
 
-gem 'jsonapi-resources'
+gem 'jsonapi-resources', '~> 0.5.4'

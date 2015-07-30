@@ -12,5 +12,17 @@ module Api::Jb
             @relationship = @record.send(params[:relationship])
         end
 
+        protected
+
+        # Overwrite for custom finder
+        def set_record
+            @record = model_class.find(params[:id])
+        end
+
+        # Overwrite for custom model class
+        def model_class
+            params[:controller].split('/').last.classify.constantize
+        end
+
     end
 end

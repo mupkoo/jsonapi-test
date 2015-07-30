@@ -8,11 +8,5 @@ module Api::Jb
         def show
         end
 
-        private
-
-        def set_record
-            @record = Comment.find(params[:id])
-        end
-
     end
 end

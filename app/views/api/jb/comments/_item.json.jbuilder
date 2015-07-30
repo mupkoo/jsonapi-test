@@ -7,7 +7,7 @@ end
 
 json.attributes do
     json.body record.body
-    json.createdAt record.create_at
+    json.createdAt record.created_at
 end
 
 json.relationships do

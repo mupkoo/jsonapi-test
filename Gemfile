@@ -31,3 +31,5 @@ group :test do
     gem 'fuubar',      '~> 2.0'
     gem 'faker',       '~> 1.4'
 end
+
+gem 'jbuilder', '~> 2.3.1'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150727122908) do
+ActiveRecord::Schema.define(version: 20150730212001) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,20 +24,20 @@ ActiveRecord::Schema.define(version: 20150727122908) do
   end
 
   create_table "comments", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
-    t.integer  "post_id"
     t.text     "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.uuid     "post_id"
   end
 
   add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
 
   create_table "posts", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
-    t.integer  "author_id"
     t.string   "title"
     t.text     "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.uuid     "author_id"
   end
 
   add_index "posts", ["author_id"], name: "index_posts_on_author_id", using: :btree

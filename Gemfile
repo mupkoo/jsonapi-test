@@ -33,3 +33,4 @@ group :test do
 end
 
 gem 'jsonapi-resources', '~> 0.5.4'
+gem 'jbuilder', '~> 2.3.1'

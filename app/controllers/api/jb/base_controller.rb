@@ -4,6 +4,13 @@ module Api::Jb
 
         before_action :set_record, only: [:show, :update, :destroy, :show_relationship, :show_related_records]
 
+        def index
+            @records = model_class.all
+        end
+
+        def show
+        end
+
         def show_relationship
             @relationship = @record.send(params[:relationship])
         end
